@@ -8,34 +8,46 @@ int main() {
 
     std::vector<std::vector<int>> renderBuffer; //2 dimensional array contains brightness values
 
-    int circleX = 0;
-    int circleY = 0;
-    int circleR = 10;
-    int horizontalResolution = 100;
-    int verticalResolution = 100;
-    int alternatorCols = 0;
-    int alternatorRows = 0;
-    int maxBrightness = 100;
-    int checkerboardSize = 10;
-    char brightnessChars[8] = {'.',':','-','=','+','*','#','%'};
+    auto circleX = 0;
+    auto circleY = 0;
+    auto circleR = 10;
+    auto horizontalResolution = 99;
+    auto verticalResolution = 40;
+    auto alternatorCols = 0;
+    auto alternatorRows = 0;
+    auto maxBrightness = 100;
+    auto checkerboardSize = 10;
+   // auto brightnessChars[] = {'.',':','-','=','+','*','#','%'};
 
     //calculate position of circle on screen canvas
 
-    for(int rows = 0; rows <= verticalResolution; rows++){
-        for(int cols = 0; cols < horizontalResolution; cols++){
-            if(alternatorCols%2 == 0){
-                renderBuffer[rows][cols] = maxBrightness - maxBrightness;
-            } else {
-                renderBuffer[rows][cols]= maxBrightness * 0.25;
+    for(auto rows = 0; rows <= verticalResolution; rows++){
+        for(auto cols = 0; cols < horizontalResolution; cols++){
+            if(cols != 0) {
+                if (alternatorCols % 2 == 0) {
+                    std::cout << ".";
+                } else {
+                    //renderBuffer[rows][cols]= maxBrightness * 0.25;
+                    std:
+                    std::cout << "#";
+                }
             }
+
             if(cols%checkerboardSize == 0) {
                 alternatorCols++;
             }
         }
+        std::cout << std::endl;
+        alternatorRows++;
+        if(alternatorRows == 4) {
+            alternatorRows = 0;
+            alternatorCols++;
+        }
+
     }
-    
-    for(int rows = 0;  rows <= verticalResolution; rows++){
-        for (int cols = 0; cols < horizontalResolution; ++cols) {
+    /*
+    for(auto rows = 0;  rows <= verticalResolution; rows++){
+        for (auto cols = 0; cols < horizontalResolution; ++cols) {
             auto charIndex = renderBuffer[rows][cols]/32;
             std::cout << charIndex << " ";
         }
@@ -45,6 +57,6 @@ int main() {
 
 
 
-
+*/
     return 0;
 }
