@@ -8,55 +8,77 @@ int main() {
 
     std::vector<std::vector<int>> renderBuffer; //2 dimensional array contains brightness values
 
-    auto circleX = 0;
-    auto circleY = 0;
-    auto circleR = 10;
-    auto horizontalResolution = 99;
-    auto verticalResolution = 40;
-    auto alternatorCols = 0;
-    auto alternatorRows = 0;
-    auto maxBrightness = 100;
+    bool trigger = false;
+    auto horizontalResolution = 100;
+    auto verticalResolution = 100;
+    auto checkerboardHeight = verticalResolution /10;
+    auto checkerboardWidth = horizontalResolution /10;
+    int iterator = 1;
+    int circleRadius = 10;
+    int circleCenterX = 0;
+    int circleCenterY = 0;
+    int circleThickness = 5;
+
+    int maxBrightness = 255;
     auto checkerboardSize = 10;
-   // auto brightnessChars[] = {'.',':','-','=','+','*','#','%'};
+    char brightnessChars[] = {' ',':','-','=','+','*','#','%'};
 
-    //calculate position of circle on screen canvas
-
-    for(auto rows = 0; rows <= verticalResolution; rows++){
-        for(auto cols = 0; cols < horizontalResolution; cols++){
-            if(cols != 0) {
-                if (alternatorCols % 2 == 0) {
-                    std::cout << ".";
+    if(true) {
+        //Fill renderbuffer with Checkerboard
+        for (int i = 0; i < verticalResolution; ++i) {
+            renderBuffer.emplace_back();
+            for (int j = 0; j < horizontalResolution; ++j) {
+                if(trigger) {
+                    if ((j / checkerboardWidth) % 2 == 0) {
+                        renderBuffer[i].emplace_back(floor(maxBrightness * 0.25));
+                    } else {
+                        renderBuffer[i].emplace_back(maxBrightness - maxBrightness);
+                    }
                 } else {
-                    //renderBuffer[rows][cols]= maxBrightness * 0.25;
-                    std:
-                    std::cout << "#";
+                    if ((j / checkerboardWidth) % 2 == 0) {
+                        renderBuffer[i].emplace_back(maxBrightness - maxBrightness);
+                    } else {
+                        renderBuffer[i].emplace_back(floor(maxBrightness * 0.25));
+                    }
                 }
+
             }
 
-            if(cols%checkerboardSize == 0) {
-                alternatorCols++;
+            if(iterator == checkerboardHeight) {
+                if (trigger) {
+                    trigger = false;
+                } else {
+                    trigger = true;
+                }
+                iterator = 0;
+            }
+            
+            iterator++;
+        }
+
+        //overlay circle on renderbuffer
+        for (int i = 0; i < verticalResolution; ++i) {
+            for (int j = 0; j < horizontalResolution; ++j) {
+                for (int k = 0; k < circleThickness; ++k) {
+                    if((int) sqrt(pow(i - (verticalResolution/2),2) + pow(j - (horizontalResolution/2),2)) == (circleRadius + k) ){
+                        renderBuffer[i][j] += floor(maxBrightness * 0.5);
+                    }
+                }
+
             }
         }
-        std::cout << std::endl;
-        alternatorRows++;
-        if(alternatorRows == 4) {
-            alternatorRows = 0;
-            alternatorCols++;
-        }
 
-    }
-    /*
-    for(auto rows = 0;  rows <= verticalResolution; rows++){
-        for (auto cols = 0; cols < horizontalResolution; ++cols) {
-            auto charIndex = renderBuffer[rows][cols]/32;
-            std::cout << charIndex << " ";
+
+
+        //Draw renderbuffer
+        for (int i = 0; i < renderBuffer.size(); ++i) {
+            for (int j = 0; j < renderBuffer[i].size(); ++j) {
+                int charId = ceil(renderBuffer[i][j] / 32);
+                std::cout << brightnessChars[charId];
+            }
+            std::cout << std::endl;
         }
-        std::cout << std::endl;
     }
 
-
-
-
-*/
     return 0;
 }
