@@ -4,7 +4,8 @@
 
 int main() {
     std::cout << "This assignment is made by Rens van Vendeloo (0923416) " << std::endl;
-    std::cout << "Made with Clion - Written in C++23" << std::endl << std::endl ;
+    std::cout << "Made with Clion - Written in C++23" << std::endl;
+    std::cout << "(WARNING!: no built-in scaling for non-cubic fonts), for best use set terminal to cubic font (8x8 px)" << std::endl << std::endl ;
 
     std::vector<std::vector<int>> renderBuffer; //2 dimensional array contains brightness values
 
@@ -19,7 +20,7 @@ int main() {
     int circleRadius = 10;
     int circleCenterX = canvasCenterX;
     int circleCenterY = canvasCenterY;
-    int circleThickness = 3;
+    int circleThickness = 10;
     double checkerboardBrightness = 0.25;
     double circleBrightness = 0.5;
 
@@ -50,7 +51,7 @@ int main() {
                 //Generate circle
 
                 for (int k = 0; k < circleThickness; ++k) {
-                    if((int) sqrt(pow(i - circleCenterX,2) + pow(j - circleCenterY,2)) == (circleRadius + k) ){
+                    if((int) sqrt(pow(i - circleCenterX,2) + pow(j - circleCenterY,2)) == (circleRadius + k)){
                         renderBuffer[i][j] += floor(maxBrightness * circleBrightness);
                     }
                 }
@@ -68,18 +69,6 @@ int main() {
 
             iterator++;
         }
-
-//        //overlay circle on renderbuffer
-//        for (int i = 0; i < verticalResolution; ++i) {
-//            for (int j = 0; j < horizontalResolution; ++j) {
-//                for (int k = 0; k < circleThickness; ++k) {
-//                    if((int) sqrt(pow(i - circleCenterX,2) + pow(j - circleCenterY,2)) == (circleRadius + k) ){
-//                        renderBuffer[i][j] += floor(maxBrightness * 0.5);
-//                    }
-//                }
-//
-//            }
-//        }
 
         //Draw renderbuffer
         for (int i = 0; i < renderBuffer.size(); ++i) {
