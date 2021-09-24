@@ -5,6 +5,7 @@
 int main() {
     std::cout << "This assignment is made by Rens van Vendeloo (0923416) " << std::endl;
     std::cout << "Made with Clion - Written in C++23" << std::endl;
+    std::cout << "Source code available at: https://github.com/0923416/Prog5_cpp_Lesson_1_Checkerboard/blob/master/main.cpp" << std::endl;
     std::cout << "(WARNING!: no built-in scaling for non-cubic fonts), for best use set terminal to cubic font (8x8 px)" << std::endl << std::endl ;
 
     std::vector<std::vector<int>> renderBuffer; //2 dimensional array contains brightness values
@@ -20,7 +21,7 @@ int main() {
     int circleRadius = 10;
     int circleCenterX = canvasCenterX;
     int circleCenterY = canvasCenterY;
-    int circleThickness = 10;
+    int circleThickness = 20;
     double checkerboardBrightness = 0.25;
     double circleBrightness = 0.5;
 
@@ -58,6 +59,7 @@ int main() {
 
             }
 
+
             if(iterator == checkerboardHeight) {
                 if (trigger) {
                     trigger = false;
@@ -67,7 +69,7 @@ int main() {
                 iterator = 0;
             }
 
-            iterator++;
+            ++iterator;
         }
 
         //Draw renderbuffer
