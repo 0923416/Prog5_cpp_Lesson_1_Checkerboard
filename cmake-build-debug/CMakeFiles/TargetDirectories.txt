@@ -1,3 +1,0 @@
-C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/CMakeFiles/Huiswerk_Les_1__Checkerboard_.dir
-C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/CMakeFiles/rebuild_cache.dir
