@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)
+# Install script for directory: C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,7 +34,7 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/MinGW/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/msys64/mingw64/bin/objdump.exe")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

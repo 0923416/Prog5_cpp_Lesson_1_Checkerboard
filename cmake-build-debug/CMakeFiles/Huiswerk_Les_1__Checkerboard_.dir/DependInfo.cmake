@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/main.cpp" "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/CMakeFiles/Huiswerk_Les_1__Checkerboard_.dir/main.cpp.obj"
+  "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/main.cpp" "C:/Users/rensv/OneDrive/2. School/Technische Informatica/2. Jaar 2/1. Onderwijs Periode 1/Programmeren 5b (C++)/Huiswerk Les 1 (Checkerboard)/cmake-build-debug/CMakeFiles/Huiswerk_Les_1__Checkerboard_.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
